@@ -26,35 +26,35 @@ public class ItemProvider {
         Item.ItemLocation locationMuseumKumu = new Item.ItemLocation("KUMU");
         Item.ItemLocation locationStorageKumuMainStorage = new Item.ItemLocation("KUMU / Main Storage");
 
-        Item item = new Item("12345", "Very Cool Painting", "This is very cool stuff", "Even no damage", Item.ItemStatus.UNCHECKED, Item.ItemState.VERY_GOOD, locationMuseumKumu);
+        Item item = new Item("12345", "TKM 38954 L34", "Very Cool Painting", "This is very cool stuff", "Even no damage", Item.ItemStatus.UNCHECKED, Item.ItemState.VERY_GOOD, locationMuseumKumu);
         Log.w("ItemProvider", "InitAllItems: item " + item);
         allItems.add(item);
 
-        item = new Item("23456", "Very Bad Painting", "This is very bad stuff", "Sooo damaged", Item.ItemStatus.UNCHECKED, Item.ItemState.VERY_BAD, locationStorageKumuMainStorage);
+        item = new Item("23456", "TKM 38955 L34", "Very Bad Painting", "This is very bad stuff", "Sooo damaged", Item.ItemStatus.UNCHECKED, Item.ItemState.VERY_BAD, locationStorageKumuMainStorage);
         Log.w("ItemProvider", "InitAllItems: item " + item);
 
         allItems.add(item);
-        item = new Item("34567", "Okeish Paining", "This is quite okeish stuff", "Just old", Item.ItemStatus.UNCHECKED, Item.ItemState.SATISFACTORY, locationStorageKumuMainStorage);
+        item = new Item("34567", "TKM 38956 L34", "Okeish Paining", "This is quite okeish stuff", "Just old", Item.ItemStatus.UNCHECKED, Item.ItemState.SATISFACTORY, locationStorageKumuMainStorage);
         Log.w("ItemProvider", "InitAllItems: item " + item);
 
         allItems.add(item);
-        item = new Item("45678", "Lost Painting", "This was very cool but got lost", "No idea as it is lost", Item.ItemStatus.LOST, Item.ItemState.VERY_GOOD, locationStorageKumuMainStorage);
+        item = new Item("45678", "TKM 38957 L34", "Lost Painting", "This was very cool but got lost", "No idea as it is lost", Item.ItemStatus.LOST, Item.ItemState.VERY_GOOD, locationStorageKumuMainStorage);
         Log.w("ItemProvider", "InitAllItems: item " + item);
 
         allItems.add(item);
-        item = new Item("56789", "Dummy Painting", "no description", "no damage", Item.ItemStatus.CHECKED, Item.ItemState.GOOD, locationStorageKumuMainStorage);
+        item = new Item("56789", "TKM 38958 L34", "Dummy Painting", "no description", "no damage", Item.ItemStatus.CHECKED, Item.ItemState.GOOD, locationStorageKumuMainStorage);
         Log.w("ItemProvider", "InitAllItems: item " + item);
 
         allItems.add(item);
-        item = new Item("01472", "Old USSR Poster", "From the 90s", "gonna tear soon", Item.ItemStatus.CHECKED, Item.ItemState.BAD, locationStorageKumuMainStorage);
+        item = new Item("01472", "TKM 38959 L34", "Old USSR Poster", "From the 90s", "gonna tear soon", Item.ItemStatus.CHECKED, Item.ItemState.BAD, locationStorageKumuMainStorage);
         Log.w("ItemProvider", "InitAllItems: item " + item);
 
         allItems.add(item);
-        item = new Item("02585", "Portrey of one Unknown Italian landlord ", "Unknown author", "no damage", Item.ItemStatus.UNCHECKED, Item.ItemState.GOOD, locationStorageKumuMainStorage);
+        item = new Item("02585", "TKM 38960 L34", "Portrey of one Unknown Italian landlord ", "Unknown author", "no damage", Item.ItemStatus.UNCHECKED, Item.ItemState.GOOD, locationStorageKumuMainStorage);
         Log.w("ItemProvider", "InitAllItems: item " + item);
 
         allItems.add(item);
-        item = new Item("03698", "Estonian Landscapes", "Journal from the exhibition", "", Item.ItemStatus.UNCHECKED, Item.ItemState.VERY_GOOD, locationStorageKumuMainStorage);
+        item = new Item("03698", "TKM 38961 L34", "Estonian Landscapes", "Journal from the exhibition", "", Item.ItemStatus.UNCHECKED, Item.ItemState.VERY_GOOD, locationStorageKumuMainStorage);
         Log.w("ItemProvider", "InitAllItems: item " + item);
 
         allItems.add(item);
