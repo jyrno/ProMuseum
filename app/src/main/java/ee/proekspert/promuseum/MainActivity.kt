@@ -24,10 +24,10 @@ class MainActivity : AppCompatActivity() {
 //        mResultTextView = findViewById(R.id.result_textview)
 
         Log.i("OpenCameraSource", "qQQ")
-        findViewById<Button>(R.id.show_item_list).setOnClickListener {
-            val intent = Intent(applicationContext, ItemListActivity::class.java)
-            startActivity(intent)
-        }
+//        findViewById<Button>(R.id.show_item_list).setOnClickListener {
+//            val intent = Intent(applicationContext, ItemListActivity::class.java)
+//            startActivity(intent)
+//        }
 //        findViewById<Button>(R.id.scan_barcode_button).setOnClickListener {
 //            val intent = Intent(applicationContext, BarcodeCaptureActivity::class.java)
 //            Log.i("OpenCameraSource", "qQQ222")
