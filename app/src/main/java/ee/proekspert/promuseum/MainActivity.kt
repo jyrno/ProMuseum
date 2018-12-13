@@ -28,10 +28,8 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, BARCODE_READER_REQUEST_CODE)
         }
         findViewById<Button>(R.id.show_item).setOnClickListener {
-            setContentView(R.layout.item);
-            val code = findViewById<TextView>(R.id.item_code5)
-            Log.i("aa", code.toString())
-            code.text = "lkasj dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka jdlask"
+            val intent = Intent(applicationContext, ItemActivity::class.java)
+            startActivity(intent)
         }
     }
 
