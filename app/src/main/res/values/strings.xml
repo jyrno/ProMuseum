@@ -18,4 +18,7 @@
     <!-- Strings related to barcode scanner -->
     <string name="item_code_title">Code</string>
     <string name="item_check">Check</string>
+
+    <!-- String related to the list view -->
+    <string name="open_item_list">Open Items List</string>
 </resources>
