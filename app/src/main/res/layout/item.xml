@@ -1,46 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="ee.proekspert.promuseum.ItemActivity">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_medium"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:textSize="@dimen/text_medium">
 
     <TextView
-        android:id="@+id/result_textview"
-        android:layout_width="match_parent"
+        android:id="@+id/item_code_title"
+        android:text="@string/scan_barcode_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/permission_camera_rationale"
-        android:textSize="22sp"
-        android:autoLink="all"
-        android:freezesText="true"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        app:layout_constraintBottom_toTopOf="@id/scan_barcode_button"/>
+        android:layout_marginBottom="@dimen/padding_medium"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_medium" />
+
+    <TextView
+        android:id="@+id/item_code5"
+        android:text="lammas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_medium"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_medium" />
 
     <Button
-        android:id="@+id/scan_barcode_button"
+        android:id="@+id/item_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/scan_barcode_button"
-        android:layout_below="@id/result_textview"
         android:background="@color/colorAccent"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.7"/>
+        android:text="@string/item_check"
+        android:textColor="@color/colorWhite" />
 
-    <Button
-        android:id="@+id/scan_barcode_button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/scan_barcode_button"
-        android:layout_below="@id/result_textview"
-        android:background="@color/colorAccent"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.7"/>
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

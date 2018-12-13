@@ -36,7 +36,7 @@
         android:id="@+id/show_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/scan_barcode_button"
+        android:text="@string/main_item"
         android:layout_below="@id/result_textview"
         android:background="@color/colorAccent"
         android:textColor="@color/colorWhite"

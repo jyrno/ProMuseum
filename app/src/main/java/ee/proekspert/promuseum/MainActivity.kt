@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         }
         findViewById<Button>(R.id.show_item).setOnClickListener {
             setContentView(R.layout.item);
+            val code = findViewById<TextView>(R.id.item_code5)
+            Log.i("aa", code.toString())
+            code.text = "lkasj dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka jdlask"
         }
     }
 
@@ -51,5 +54,6 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private val LOG_TAG = MainActivity::class.java.simpleName
         private val BARCODE_READER_REQUEST_CODE = 1
+        private val ITEM_REQUEST_CODE = 2
     }
 }
