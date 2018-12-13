@@ -9,6 +9,7 @@ import android.widget.TextView
 import com.google.android.gms.common.api.CommonStatusCodes
 import com.google.android.gms.vision.barcode.Barcode
 import ee.proekspert.promuseum.barcode.BarcodeCaptureActivity
+import ee.proekspert.promuseum.itemlist.ItemListActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,16 +22,18 @@ class MainActivity : AppCompatActivity() {
         mResultTextView = findViewById(R.id.result_textview)
 
         Log.i("OpenCameraSource", "qQQ")
+        findViewById<Button>(R.id.show_item_list).setOnClickListener {
+            val intent = Intent(applicationContext, ItemListActivity::class.java)
+            startActivity(intent)
+        }
         findViewById<Button>(R.id.scan_barcode_button).setOnClickListener {
             val intent = Intent(applicationContext, BarcodeCaptureActivity::class.java)
             Log.i("OpenCameraSource", "qQQ222")
             startActivityForResult(intent, BARCODE_READER_REQUEST_CODE)
         }
         findViewById<Button>(R.id.show_item).setOnClickListener {
-            setContentView(R.layout.item);
-            val code = findViewById<TextView>(R.id.item_code5)
-            Log.i("aa", code.toString())
-            code.text = "lkasj dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka jdlask"
+            val intent = Intent(applicationContext, ItemActivity::class.java)
+            startActivity(intent)
         }
 
         findViewById<Button>(R.id.search_page_button).setOnClickListener {
