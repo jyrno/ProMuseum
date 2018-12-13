@@ -20,10 +20,12 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListIt
     // you provide access to all the views for a data item in a view holder
     public static class ListItemHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView mTextView;
+        public TextView mTitle;
+        public TextView mDescription;
         public ListItemHolder(LinearLayout linearLayout) {
             super(linearLayout);
-            mTextView = linearLayout.findViewById(R.id.textView);
+            mTitle = linearLayout.findViewById(R.id.list_item_title);
+            mDescription = linearLayout.findViewById(R.id.list_item_description);
         }
     }
 
@@ -39,8 +41,6 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListIt
         // create a new view
         LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item, parent, false);
-        // ...
-        TextView v = linearLayout.findViewById(R.id.textView);
         ListItemHolder vh = new ListItemHolder(linearLayout);
         return vh;
     }
@@ -51,7 +51,9 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListIt
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         Log.i("ItemsListAdapter", "onBindViewHolder: position " + position + "; name: " + mDataset.get(position).getName());
-        holder.mTextView.setText(mDataset.get(position).getName());
+        Item selectedItem = mDataset.get(position);
+        holder.mTitle.setText(selectedItem.getName());
+        holder.mDescription.setText(selectedItem.getDescription());
 
     }
 
