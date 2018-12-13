@@ -5,6 +5,7 @@
 
     <dimen name="tabbar_height">60dp</dimen>
     <dimen name="toolbar_and_systembar_height">80dp</dimen>
+    <dimen name="button_height">40dp</dimen>
 
     <dimen name="padding_microscopic">2dp</dimen>
     <dimen name="padding_tiny">4dp</dimen>

@@ -12,12 +12,16 @@
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
 
-    <!-- Strings related to barcode scanner -->
-    <string name="main_item">Item view</string>
+    <!-- General -->
+    <string name="change">Muuda</string>
 
-    <!-- Strings related to barcode scanner -->
-    <string name="item_code_title">Code</string>
-    <string name="item_check">Check</string>
+    <!-- Main page -->
+    <string name="main_item">Item view</string>
+    <string name="main_item_list">Item List view</string>
+
+    <!-- Item -->
+    <string name="item_code_title">Kood</string>
+    <string name="item_check">Kontrollitud</string>
 
     <!-- String related to the list view -->
     <string name="open_item_list">Open Items List</string>
@@ -25,4 +29,5 @@
     <!--String related to search -->
     <string name="search_by">Otsi museaali koodi abil</string>
     <string name="code">Museaali kood</string>
+    <string name="not_found">Ei leidnud</string>
 </resources>
