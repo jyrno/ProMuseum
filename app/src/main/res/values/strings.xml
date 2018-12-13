@@ -21,4 +21,7 @@
     <!-- Item -->
     <string name="item_code_title">Kood</string>
     <string name="item_check">Kontrollitud</string>
+
+    <!-- String related to the list view -->
+    <string name="open_item_list">Open Items List</string>
 </resources>
