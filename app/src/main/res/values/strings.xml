@@ -25,4 +25,8 @@
 
     <!-- String related to the list view -->
     <string name="open_item_list">Open Items List</string>
+
+    <!--String related to search -->
+    <string name="search_by">Otsi museaali koodi abil</string>
+    <string name="code">Museaali kood</string>
 </resources>
