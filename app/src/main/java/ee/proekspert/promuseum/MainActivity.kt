@@ -20,18 +20,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mResultTextView = findViewById(R.id.result_textview)
+//        mResultTextView = findViewById(R.id.result_textview)
 
         Log.i("OpenCameraSource", "qQQ")
         findViewById<Button>(R.id.show_item_list).setOnClickListener {
             val intent = Intent(applicationContext, ItemListActivity::class.java)
             startActivity(intent)
         }
-        /*findViewById<Button>(R.id.scan_barcode_button).setOnClickListener {
-            val intent = Intent(applicationContext, BarcodeCaptureActivity::class.java)
-            Log.i("OpenCameraSource", "qQQ222")
-            startActivityForResult(intent, BARCODE_READER_REQUEST_CODE)
-        }*/
+//        findViewById<Button>(R.id.scan_barcode_button).setOnClickListener {
+//            val intent = Intent(applicationContext, BarcodeCaptureActivity::class.java)
+//            Log.i("OpenCameraSource", "qQQ222")
+//            startActivityForResult(intent, BARCODE_READER_REQUEST_CODE)
+//        }
         findViewById<Button>(R.id.show_item).setOnClickListener {
             val intent = Intent(applicationContext, ItemActivity::class.java)
             startActivity(intent)
@@ -43,21 +43,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == BARCODE_READER_REQUEST_CODE) {
-            if (resultCode == CommonStatusCodes.SUCCESS) {
-                if (data != null) {
-                    val barcode = data.getParcelableExtra<Barcode>(BarcodeCaptureActivity.BarcodeObject)
-                    val p = barcode.cornerPoints
-                    mResultTextView.text = barcode.displayValue
-                } else
-                    mResultTextView.setText(R.string.no_barcode_captured)
-            } else
-                Log.e(LOG_TAG, String.format(getString(R.string.barcode_error_format),
-                        CommonStatusCodes.getStatusCodeString(resultCode)))
-        } else
-            super.onActivityResult(requestCode, resultCode, data)
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//       if (requestCode == BARCODE_READER_REQUEST_CODE) {
+//            if (resultCode == CommonStatusCodes.SUCCESS) {
+//                if (data != null) {
+//                    val barcode = data.getParcelableExtra<Barcode>(BarcodeCaptureActivity.BarcodeObject)
+//                    val p = barcode.cornerPoints
+//                    mResultTextView.text = barcode.displayValue
+//                } else
+//                    mResultTextView.setText(R.string.no_barcode_captured)
+//            } else
+//                Log.e(LOG_TAG, String.format(getString(R.string.barcode_error_format),
+//                        CommonStatusCodes.getStatusCodeString(resultCode)))
+//        } else
+//            super.onActivityResult(requestCode, resultCode, data)
+//    }
 
     companion object {
         private val LOG_TAG = MainActivity::class.java.simpleName
