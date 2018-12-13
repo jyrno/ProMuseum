@@ -10,6 +10,7 @@ import com.google.android.gms.common.api.CommonStatusCodes
 import com.google.android.gms.vision.barcode.Barcode
 import ee.proekspert.promuseum.barcode.BarcodeCaptureActivity
 import ee.proekspert.promuseum.itemlist.ItemListActivity
+import ee.proekspert.promuseum.search.SearchActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,7 +38,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.search_page_button).setOnClickListener {
-            setContentView(R.layout.search);
+            val intent = Intent(applicationContext, SearchActivity::class.java)
+            startActivity(intent)
         }
     }
 

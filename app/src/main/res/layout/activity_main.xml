@@ -7,6 +7,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="ee.proekspert.promuseum.MainActivity">
 
+    <Button
+        android:id="@+id/search_page_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_bright"
+        android:text="Search"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/result_textview"
         android:layout_width="match_parent"
@@ -46,15 +56,20 @@
         tools:text="Show Item" />
 
     <Button
-        android:id="@+id/search_page_button"
+        android:id="@+id/show_item_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/show_item"
-        android:background="@android:color/holo_blue_bright"
-        android:text="Search"
+        android:layout_below="@id/result_textview"
+        android:layout_marginStart="3dp"
+        android:background="@color/colorAccent"
+        android:text="@string/open_item_list"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904" />
+        app:layout_constraintVertical_bias="0.92" />
+
+
 
 </android.support.constraint.ConstraintLayout>
