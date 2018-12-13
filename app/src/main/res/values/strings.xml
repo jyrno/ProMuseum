@@ -25,4 +25,5 @@
     <!--String related to search -->
     <string name="search_by">Otsi museaali koodi abil</string>
     <string name="code">Museaali kood</string>
+    <string name="not_found">Ei leidnud</string>
 </resources>

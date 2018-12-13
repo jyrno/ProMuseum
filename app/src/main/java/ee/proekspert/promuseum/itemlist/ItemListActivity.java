@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import org.jetbrains.annotations.Nullable;
+
 import ee.proekspert.promuseum.R;
 
 public class ItemListActivity extends AppCompatActivity {
@@ -13,6 +15,8 @@ public class ItemListActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private static final String[] testData = {"gdsfgdfg", "333"};
+    @Nullable
+    public static String location_code;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

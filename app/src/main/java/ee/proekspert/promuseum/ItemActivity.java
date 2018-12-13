@@ -16,7 +16,7 @@ public final class ItemActivity extends AppCompatActivity {
 
     private static int i = 1;
     @Nullable
-    public static Editable item_code;
+    public static String item_code;
 
     @Override
     public void onCreate(Bundle bundle) {
