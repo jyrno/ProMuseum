@@ -5,32 +5,87 @@
     android:layout_margin="@dimen/padding_medium"
     android:background="?android:attr/selectableItemBackground"
     android:orientation="vertical"
-    android:textSize="@dimen/text_medium">
+    android:fontFamily="Roboto"
+    android:textSize="@dimen/text_medium"
+    android:gravity="center_vertical">
 
     <TextView
         android:id="@+id/item_code_title"
         android:text="@string/scan_barcode_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/padding_medium"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/text_medium" />
+        android:textColor="@color/colorLabel"
+        android:textSize="@dimen/text_largish" />
 
     <TextView
         android:id="@+id/item_code5"
         android:text="lammas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/padding_medium"
-        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="@dimen/padding_small"
+        android:textColor="@color/colorText"
         android:textSize="@dimen/text_medium" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/padding_small"
+        android:background="@color/colorDivider"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="@dimen/padding_small">
+
+        <Button
+            android:id="@+id/btnAddExpense"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:textColor="@color/colorSecondaryButton"
+            android:textStyle="bold"
+            android:text="@string/change"/>
+
+        <TextView
+            android:id="@+id/item_code_title2"
+            android:text="@string/scan_barcode_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorLabel"
+            android:textSize="@dimen/text_largish" />
+
+        <TextView
+            android:id="@+id/item_code5a"
+            android:text="lammas"
+            android:layout_below="@+id/item_code_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_medium" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/padding_small"
+        android:background="@color/colorDivider"/>
 
     <Button
         android:id="@+id/item_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:layout_gravity="right"
+        android:padding="@dimen/padding_medium"
+        android:paddingRight="@dimen/padding_largish"
+        android:background="@color/colorButton"
+        android:drawableLeft="@android:drawable/ic_menu_search"
         android:text="@string/item_check"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_largish" />
 
 </LinearLayout>

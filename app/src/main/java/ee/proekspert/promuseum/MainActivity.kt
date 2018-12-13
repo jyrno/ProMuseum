@@ -27,11 +27,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, ItemListActivity::class.java)
             startActivity(intent)
         }
-        findViewById<Button>(R.id.scan_barcode_button).setOnClickListener {
+        /*findViewById<Button>(R.id.scan_barcode_button).setOnClickListener {
             val intent = Intent(applicationContext, BarcodeCaptureActivity::class.java)
             Log.i("OpenCameraSource", "qQQ222")
             startActivityForResult(intent, BARCODE_READER_REQUEST_CODE)
-        }
+        }*/
         findViewById<Button>(R.id.show_item).setOnClickListener {
             val intent = Intent(applicationContext, ItemActivity::class.java)
             startActivity(intent)

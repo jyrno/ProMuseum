@@ -28,13 +28,13 @@
         android:layout_centerVertical="true"
         android:gravity="center"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        app:layout_constraintBottom_toTopOf="@id/scan_barcode_button"/>
+        app:layout_constraintBottom_toTopOf="@id/show_item_list"/>
 
     <Button
-        android:id="@+id/scan_barcode_button"
+        android:id="@+id/show_item_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/scan_barcode_button"
+        android:text="@string/main_item_list"
         android:layout_below="@id/result_textview"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
@@ -46,30 +46,13 @@
         android:id="@+id/show_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/scan_barcode_button"
+        android:layout_below="@id/show_item_list"
         android:background="@color/colorAccent"
-        android:text="@string/scan_barcode_button"
+        android:text="@string/main_item"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8"
         tools:text="Show Item" />
-
-    <Button
-        android:id="@+id/show_item_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/result_textview"
-        android:layout_marginStart="3dp"
-        android:background="@color/colorAccent"
-        android:text="@string/open_item_list"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
-
-
 
 </android.support.constraint.ConstraintLayout>
