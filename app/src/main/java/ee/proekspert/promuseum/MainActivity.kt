@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.KeyEvent
 import android.widget.Button
 import android.widget.TextView
 import com.google.android.gms.common.api.CommonStatusCodes
@@ -63,5 +64,9 @@ class MainActivity : AppCompatActivity() {
         private val LOG_TAG = MainActivity::class.java.simpleName
         private val BARCODE_READER_REQUEST_CODE = 1
         private val ITEM_REQUEST_CODE = 2
+    }
+
+    override fun dispatchKeyEvent(event: KeyEvent?): Boolean {
+        return false
     }
 }
