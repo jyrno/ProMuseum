@@ -17,6 +17,7 @@
 
     <!-- Main page -->
     <string name="main_item">Item view</string>
+    <string name="main_item_list">Item List view</string>
 
     <!-- Item -->
     <string name="item_code_title">Kood</string>
