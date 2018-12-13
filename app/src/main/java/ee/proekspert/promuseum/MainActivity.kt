@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.TextView
 import com.google.android.gms.common.api.CommonStatusCodes
 import com.google.android.gms.vision.barcode.Barcode
-import ee.proekspert.promuseum.R
 import ee.proekspert.promuseum.barcode.BarcodeCaptureActivity
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +31,10 @@ class MainActivity : AppCompatActivity() {
             val code = findViewById<TextView>(R.id.item_code5)
             Log.i("aa", code.toString())
             code.text = "lkasj dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka jdlask"
+        }
+
+        findViewById<Button>(R.id.search_page_button).setOnClickListener {
+            setContentView(R.layout.search);
         }
     }
 
