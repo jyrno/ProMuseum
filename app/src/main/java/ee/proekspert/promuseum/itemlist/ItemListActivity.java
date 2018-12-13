@@ -5,14 +5,17 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.List;
+
 import ee.proekspert.promuseum.R;
+import ee.proekspert.promuseum.data.Item;
+import ee.proekspert.promuseum.datasource.ItemProvider;
 
 public class ItemListActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private static final String[] testData = {"gdsfgdfg", "333"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +31,9 @@ public class ItemListActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+        List<Item> allItemsInLocation = ItemProvider.getItemProvider().findAllItemsInLocation(new Item.ItemLocation("KUMU / Main Storage"));
         // specify an adapter (see also next example)
-        mAdapter = new ItemListAdapter(testData);
+        mAdapter = new ItemListAdapter(allItemsInLocation);
         mRecyclerView.setAdapter(mAdapter);
 
     }
