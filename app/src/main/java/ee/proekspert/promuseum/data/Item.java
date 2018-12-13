@@ -3,6 +3,7 @@ package ee.proekspert.promuseum.data;
 public class Item {
 
     private final String id;
+    private final String museumId;
     private String name;
     private String description;
     private String damage;
@@ -10,14 +11,19 @@ public class Item {
     private ItemState state;
     private ItemLocation location;
 
-    public Item(String id, String name, String description, String damage, ItemStatus status, ItemState state, ItemLocation location) {
+    public Item(String id, String museumId, String name, String description, String damage, ItemStatus status, ItemState state, ItemLocation location) {
         this.id = id;
+        this.museumId = museumId;
         this.name = name;
         this.description = description;
         this.damage = damage;
         this.status = status;
         this.state = state;
         this.location = location;
+    }
+
+    public String getMuseumId() {
+        return museumId;
     }
 
     public enum ItemStatus {

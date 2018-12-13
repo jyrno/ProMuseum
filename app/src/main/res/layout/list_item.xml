@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/list_item_title"
+                android:id="@+id/list_item_museum_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="viewStart"
@@ -33,7 +33,7 @@
                 tools:text="@tools:sample/lorem" />
 
             <TextView
-                android:id="@+id/list_item_description"
+                android:id="@+id/list_item_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="viewStart"
