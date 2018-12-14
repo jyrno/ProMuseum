@@ -38,7 +38,7 @@ public class ItemListActivity extends AppCompatActivity {
 
         List<Item> allItemsInLocation = ItemProvider.getItemProvider().findAllItemsInLocation(new Item.ItemLocation("KUMU / Main Storage"));
         // specify an adapter (see also next example)
-        mAdapter = new ItemListAdapter(allItemsInLocation);
+        mAdapter = new ItemListAdapter(allItemsInLocation, null);
         mRecyclerView.setAdapter(mAdapter);
 
     }

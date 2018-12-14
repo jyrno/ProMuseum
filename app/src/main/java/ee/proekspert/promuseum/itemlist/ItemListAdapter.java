@@ -1,5 +1,6 @@
 package ee.proekspert.promuseum.itemlist;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import ee.proekspert.promuseum.data.Item;
 
 public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListItemHolder> {
     private List<Item> mDataset;
+    private ItemListFragment itemListFragment;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -25,17 +27,28 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListIt
         public TextView mMuseumId;
         public TextView mName;
         public CheckBox mChecked;
+        public View.OnClickListener onClickListener;
+        public View linearLayout;
         public ListItemHolder(LinearLayout linearLayout) {
             super(linearLayout);
+            this.linearLayout = linearLayout;
             mMuseumId = linearLayout.findViewById(R.id.list_item_museum_id);
             mName = linearLayout.findViewById(R.id.list_item_name);
             mChecked = linearLayout.findViewById(R.id.list_item_checked);
         }
+
+        public void setOnClickListener(View.OnClickListener onClickListener) {
+            this.onClickListener = onClickListener;
+            if (onClickListener != null) {
+                linearLayout.setOnClickListener(onClickListener);
+            }
+        }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ItemListAdapter(List<Item> myDataset) {
+    public ItemListAdapter(List<Item> myDataset, ItemListFragment itemListFragment) {
         mDataset = myDataset;
+        this.itemListFragment = itemListFragment;
     }
 
     // Create new views (invoked by the layout manager)
@@ -46,6 +59,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListIt
         LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item, parent, false);
         ListItemHolder vh = new ListItemHolder(linearLayout);
+
         return vh;
     }
 
@@ -56,6 +70,20 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListIt
         // - replace the contents of the view with that element
         Log.i("ItemsListAdapter", "onBindViewHolder: position " + position + "; name: " + mDataset.get(position).getName());
         Item selectedItem = mDataset.get(position);
+//        Log.w("IteLiAdapter", "onClickListener: " + onClickListener);
+
+
+        ItemListFragment.ItemListFragmentOnClickListener onClickListener = null;
+
+        if (itemListFragment != null) {
+            onClickListener = itemListFragment.new ItemListFragmentOnClickListener();
+        }
+
+        if (onClickListener != null) {
+            onClickListener.setItem(selectedItem);
+            holder.setOnClickListener(onClickListener);
+
+        }
         holder.mMuseumId.setText(selectedItem.getMuseumId());
         holder.mName.setText(selectedItem.getName());
         holder.mChecked.setChecked(selectedItem.getStatus().isChecked());
