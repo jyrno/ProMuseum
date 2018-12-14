@@ -1,5 +1,6 @@
 package ee.proekspert.promuseum.itemlist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -7,11 +8,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import ee.proekspert.promuseum.R;
+import ee.proekspert.promuseum.search.SearchActivity;
 
 public class TabbedItemListActivityBackup extends AppCompatActivity {
 
@@ -29,6 +32,14 @@ public class TabbedItemListActivityBackup extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        findViewById(R.id.start_scanning_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setupViewPager(ViewPager viewPager) {
