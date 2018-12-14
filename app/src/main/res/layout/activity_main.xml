@@ -70,8 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_page_button"
-        tools:text="Show Item" />
+        app:layout_constraintTop_toBottomOf="@+id/search_page_button" />
 
     <ImageView
         android:id="@+id/imageView3"
