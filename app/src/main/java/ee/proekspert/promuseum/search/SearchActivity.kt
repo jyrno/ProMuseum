@@ -107,12 +107,14 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
     }
 
     private fun goToItem(text: String) {
+        inputField.text.clear()
         val intent = Intent(applicationContext, ItemActivity::class.java)
         ItemActivity.item_code = text
         startActivity(intent)
     }
 
     private fun goToLocation(text: String) {
+        inputField.text.clear()
         val intent = Intent(applicationContext, TabbedItemListActivityBackup::class.java)
 //        ItemListActivity.location_code = text
         startActivity(intent)
