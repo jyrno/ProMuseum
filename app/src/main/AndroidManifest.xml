@@ -25,6 +25,10 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".itemlist.ItemListActivity"></activity>
         <activity android:name=".search.SearchActivity"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

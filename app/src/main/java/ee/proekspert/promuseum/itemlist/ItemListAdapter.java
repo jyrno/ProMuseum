@@ -20,12 +20,12 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListIt
     // you provide access to all the views for a data item in a view holder
     public static class ListItemHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView mTitle;
-        public TextView mDescription;
+        public TextView mMuseumId;
+        public TextView mName;
         public ListItemHolder(LinearLayout linearLayout) {
             super(linearLayout);
-            mTitle = linearLayout.findViewById(R.id.list_item_title);
-            mDescription = linearLayout.findViewById(R.id.list_item_description);
+            mMuseumId = linearLayout.findViewById(R.id.list_item_museum_id);
+            mName = linearLayout.findViewById(R.id.list_item_name);
         }
     }
 
@@ -52,8 +52,8 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListIt
         // - replace the contents of the view with that element
         Log.i("ItemsListAdapter", "onBindViewHolder: position " + position + "; name: " + mDataset.get(position).getName());
         Item selectedItem = mDataset.get(position);
-        holder.mTitle.setText(selectedItem.getName());
-        holder.mDescription.setText(selectedItem.getDescription());
+        holder.mMuseumId.setText(selectedItem.getMuseumId());
+        holder.mName.setText(selectedItem.getName());
 
     }
 

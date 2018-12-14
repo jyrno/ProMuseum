@@ -16,8 +16,8 @@
     <string name="change">Muuda</string>
 
     <!-- Main page -->
-    <string name="main_item">Item view</string>
-    <string name="main_item_list">Item List view</string>
+    <string name="main_item">Museaali vaade</string>
+    <string name="main_item_list">Asukoha vaade</string>
 
     <!-- Item -->
     <string name="item_code_title">Kood</string>
@@ -31,7 +31,9 @@
     <string name="open_item_list">Open Items List</string>
 
     <!--String related to search -->
-    <string name="search_by">Otsi museaali koodi abil</string>
+    <string name="search">Otsi</string>
+    <string name="search_by">või otsi museaali koodi abil</string>
     <string name="code">Museaali kood</string>
     <string name="not_found">Ei leidnud</string>
+    <string name="scan_code">Skaneeri kood</string>
 </resources>
