@@ -1,5 +1,6 @@
 package ee.proekspert.promuseum.itemlist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import ee.proekspert.promuseum.ItemActivity;
 import ee.proekspert.promuseum.R;
 import ee.proekspert.promuseum.data.Item;
 import ee.proekspert.promuseum.datasource.ItemProvider;
@@ -63,7 +65,7 @@ public abstract class ItemListFragment extends Fragment {
 
 
         // specify an adapter (see also next example)
-        mAdapter = new ItemListAdapter(filteredByStatus);
+        mAdapter = new ItemListAdapter(filteredByStatus, this);
         mRecyclerView.setAdapter(mAdapter);
         return fragmentView;
     }
@@ -80,7 +82,7 @@ public abstract class ItemListFragment extends Fragment {
 
         @Override
         String getFragmentTitle() {
-            return "CHECKED";
+            return "KONTROLLITUD";
         }
     }
 
@@ -92,7 +94,7 @@ public abstract class ItemListFragment extends Fragment {
 
         @Override
         String getFragmentTitle() {
-            return "UNCHECKED";
+            return "KONTROLLIMATA";
         }
     }
 
@@ -104,9 +106,25 @@ public abstract class ItemListFragment extends Fragment {
 
         @Override
         String getFragmentTitle() {
-            return "LOST";
+            return "KADUNUD";
         }
     }
 
+    public class ItemListFragmentOnClickListener implements View.OnClickListener {
+        private Item item;
+
+        public void setItem(Item item) {
+            this.item = item;
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (item != null && mRecyclerView != null) {
+                Intent intent = new Intent(mRecyclerView.getContext(), ItemActivity.class);
+                ItemActivity.item_code = item.getId();
+                startActivity(intent);
+            }
+        }
+    }
 
 }

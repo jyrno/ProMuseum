@@ -56,26 +56,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//       if (requestCode == BARCODE_READER_REQUEST_CODE) {
-//            if (resultCode == CommonStatusCodes.SUCCESS) {
-//                if (data != null) {
-//                    val barcode = data.getParcelableExtra<Barcode>(BarcodeCaptureActivity.BarcodeObject)
-//                    val p = barcode.cornerPoints
-//                    mResultTextView.text = barcode.displayValue
-//                } else
-//                    mResultTextView.setText(R.string.no_barcode_captured)
-//            } else
-//                Log.e(LOG_TAG, String.format(getString(R.string.barcode_error_format),
-//                        CommonStatusCodes.getStatusCodeString(resultCode)))
-//        } else
-//            super.onActivityResult(requestCode, resultCode, data)
-//    }
-
     companion object {
         private val LOG_TAG = MainActivity::class.java.simpleName
-        private val BARCODE_READER_REQUEST_CODE = 1
-        private val ITEM_REQUEST_CODE = 2
     }
 
     override fun dispatchKeyEvent(event: KeyEvent?): Boolean {

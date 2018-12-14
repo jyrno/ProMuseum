@@ -2,7 +2,6 @@ package ee.proekspert.promuseum.search
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.IntentFilter
@@ -46,6 +45,7 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
     private val RC_HANDLE_CAMERA_PERM = 2
 
     private lateinit var inputField: EditText
+    private lateinit var outField: TextView
 
     private var mCameraSource: CameraSource? = null
     private var mPreview: CameraSourcePreview? = null
@@ -55,8 +55,9 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
         setContentView(R.layout.search)
 
 
-        supportActionBar!!.title = "Otsing"
+        supportActionBar!!.title = resources.getString(R.string.search_title)
 
+        outField = findViewById(R.id.result_textview)
         inputField = findViewById(R.id.insert_code_field)
 
         inputField.setOnEditorActionListener { view, i, keyEvent ->
@@ -84,9 +85,14 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
         var museumCode = intent.getStringExtra("LAST_CHECKED_ITEM")
 
         if (museumCode != null) {
-            var toast = Toast.makeText(applicationContext, museumCode + " checked", Toast.LENGTH_LONG)
+            var toast = Toast.makeText(applicationContext, museumCode + " kontrollitud", Toast.LENGTH_LONG)
             toast.show()
         }
+    }
+
+    private fun clearFields() {
+        inputField.text.clear()
+        outField.text = ""
     }
 
     private fun codeLookup(barcode: String) {
@@ -102,19 +108,19 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
     }
 
     private fun notFound() {
-        findViewById<TextView>(R.id.result_textview).text = "404 Not Found"
+        findViewById<TextView>(R.id.result_textview).text = resources.getString(R.string.not_found)
         inputField.selectAll()
     }
 
     private fun goToItem(text: String) {
-        inputField.text.clear()
+        clearFields()
         val intent = Intent(applicationContext, ItemActivity::class.java)
         ItemActivity.item_code = text
         startActivity(intent)
     }
 
     private fun goToLocation(text: String) {
-        inputField.text.clear()
+        clearFields()
         val intent = Intent(applicationContext, TabbedItemListActivityBackup::class.java)
 //        ItemListActivity.location_code = text
         startActivity(intent)
@@ -240,11 +246,6 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
 
         val listener = DialogInterface.OnClickListener { dialog, id -> finish() }
 
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Multitracker sample")
-                .setMessage(R.string.no_camera_permission)
-                .setPositiveButton(R.string.ok, listener)
-                .show()
     }
 
 
