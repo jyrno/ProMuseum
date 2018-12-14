@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.KeyEvent
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.gms.common.api.CommonStatusCodes
 import com.google.android.gms.vision.barcode.Barcode
 import ee.proekspert.promuseum.barcode.BarcodeCaptureActivity
@@ -33,8 +34,8 @@ class MainActivity : AppCompatActivity() {
 //            Log.i("OpenCameraSource", "qQQ222")
 //            startActivityForResult(intent, BARCODE_READER_REQUEST_CODE)
 //        }
-        findViewById<Button>(R.id.show_item).setOnClickListener {
-            val intent = Intent(applicationContext, ItemActivity::class.java)
+        findViewById<Button>(R.id.connect_device).setOnClickListener {
+            val intent = Intent(applicationContext, ConnectToScannerActivity::class.java)
             startActivity(intent)
         }
 
@@ -42,6 +43,17 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, SearchActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onPostResume() {
+        super.onPostResume()
+
+        var message = intent.getStringExtra("CONNECTION_MESSAGE")
+        if (message != null) {
+            var toast = Toast.makeText(applicationContext, message, Toast.LENGTH_LONG)
+            toast.show()
+        }
+
     }
 
 //    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
