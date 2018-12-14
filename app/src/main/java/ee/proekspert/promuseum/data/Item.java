@@ -101,35 +101,34 @@ public class Item {
     }
 
     public enum ItemState {
-        // TODO take string from the translations or at least put estonian strings
         VERY_GOOD{
             @Override
             public String toString() {
-                return "Very good";
+                return "Väga hea";
             }
         },
         GOOD{
             @Override
             public String toString() {
-                return "Good";
+                return "Hea";
             }
         },
         SATISFACTORY{
             @Override
             public String toString() {
-                return "Satisfactory";
+                return "Rahuldav";
             }
         },
         BAD{
             @Override
             public String toString() {
-                return "Bad";
+                return "Halb";
             }
         },
         VERY_BAD{
             @Override
             public String toString() {
-                return "Very bad";
+                return "Väga halb";
             }
         }
     }
