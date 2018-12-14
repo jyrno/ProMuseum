@@ -59,7 +59,7 @@
             android:layout_height="60dp"
             android:layout_gravity="right"
             android:background="@color/colorButton"
-            android:drawableLeft="@drawable/ic_scanning_icon"
+            android:drawableLeft="@drawable/googleg_standard_color_18"
             android:padding="18dp"
             android:textSize="@dimen/text_largish"
             tools:textColor="@color/colorButton" />

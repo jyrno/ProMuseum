@@ -27,7 +27,7 @@ public class ConnectToScannerActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra("CONNECTION_MESSAGE", "Reader is connected");
+                intent.putExtra("CONNECTION_MESSAGE", R.string.reader_connected);
                 startActivity(intent);
             }
         }).start();

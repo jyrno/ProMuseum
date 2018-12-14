@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top|center_horizontal"
             android:layout_marginTop="200dp"
-            android:text="Connecting to the reader"
+            android:text="@string/connecting_reader"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
