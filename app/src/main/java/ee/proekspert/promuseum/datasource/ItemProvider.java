@@ -26,15 +26,15 @@ public class ItemProvider {
         Item.ItemLocation locationMuseumKumu = new Item.ItemLocation("KUMU");
         Item.ItemLocation garage48Shelve = new Item.ItemLocation("Palo Alto / GARAGE48 Riiul");
 
-        Item item = new Item("0201472125", "TKM 38951 L34", "e0ce0449-8156-413b-afb1-b934ee78e888", "Estonia kontserdisaali lühter", "Arhitekt Alar Kotli", "Kahjustusi ei ole", Item.ItemStatus.UNCHECKED, Item.ItemState.SATISFACTORY, garage48Shelve);
+        Item item = new Item("0201472125", "TKM 38951 L34", "https://i.imgur.com/9LyTkfP.jpg"/*"e0ce0449-8156-413b-afb1-b934ee78e888"*/, "Estonia kontserdisaali lühter", "Arhitekt Alar Kotli", "Kahjustusi ei ole", Item.ItemStatus.UNCHECKED, Item.ItemState.SATISFACTORY, garage48Shelve);
         Log.w("ItemProvider", "InitAllItems: item " + item);
         allItems.add(item);
 
-        item = new Item("0201699391", "TKM 38952 L34", "3ccfa93f-322d-4fc6-b40b-22cc6d9a490f", "Liv-, Est- und Curlaendisches Privatrecht", "pealkirja keel: saksa keel , ainese keel: saksa keel", "Veidi mõranenud külgede pealt", Item.ItemStatus.UNCHECKED, Item.ItemState.SATISFACTORY, garage48Shelve);
+        item = new Item("0201699391", "TKM 38952 L34", "https://i.imgur.com/IazFfGD.jpg" /*"3ccfa93f-322d-4fc6-b40b-22cc6d9a490f"*/, "Liv-, Est- und Curlaendisches Privatrecht", "pealkirja keel: saksa keel , ainese keel: saksa keel", "Veidi mõranenud külgede pealt", Item.ItemStatus.UNCHECKED, Item.ItemState.SATISFACTORY, garage48Shelve);
         Log.w("ItemProvider", "InitAllItems: item " + item);
         allItems.add(item);
 
-        item = new Item("0202444499", "TKM 38953 L34", "23f854dd-fe23-46e7-9156-b6de07889e2a", "Tass. KALEVIPOJA-ainelise portselanmaaliga", "This is very cool stuff", "", Item.ItemStatus.UNCHECKED, Item.ItemState.GOOD, garage48Shelve);
+        item = new Item("0202444499", "TKM 38953 L34", "https://i.imgur.com/XimSgfK.jpg" /*"23f854dd-fe23-46e7-9156-b6de07889e2a"*/, "Tass. KALEVIPOJA-ainelise portselanmaaliga", "This is very cool stuff", "", Item.ItemStatus.UNCHECKED, Item.ItemState.GOOD, garage48Shelve);
         Log.w("ItemProvider", "InitAllItems: item " + item);
         allItems.add(item);
 

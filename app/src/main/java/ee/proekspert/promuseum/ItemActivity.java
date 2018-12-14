@@ -71,8 +71,12 @@ public final class ItemActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.item_condition_comment)).setText(item.getDamage());
         ((TextView) findViewById(R.id.item_location)).setText(item.getLocation().toString());
         ((TextView) findViewById(R.id.item_last_checked)).setText("11.12.2018 11:23:51");
+        String imgUrl = item.getImageId();
+        if (!imgUrl.startsWith("http")) {
+            imgUrl = "https://www.muis.ee/digitaalhoidla/api/meedia/pisipilt?id=" + item.getImageId();
+        }
         new DownloadImageTask((ImageView) findViewById(R.id.item_image))
-                .execute("https://www.muis.ee/digitaalhoidla/api/meedia/pisipilt?id=" + item.getImageId());
+                .execute(imgUrl);
 
         //https://www.muis.ee/digitaalhoidla/api/meedia/pisipilt?id=3ccfa93f-322d-4fc6-b40b-22cc6d9a490f
 
