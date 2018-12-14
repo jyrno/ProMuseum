@@ -34,10 +34,11 @@ public class Item {
         private final boolean checked;
         private final boolean lost;
 
-        boolean isChecked() {
+        public boolean isChecked() {
             return checked;
         }
-        boolean isLost(){
+
+        public boolean isLost(){
             return lost;
         }
 

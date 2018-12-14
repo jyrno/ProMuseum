@@ -18,12 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ItemActivity"></activity>
+        <activity android:name=".ItemActivity" />
         <activity
             android:name=".barcode.BarcodeCaptureActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".itemlist.ItemListActivity"></activity>
-        <activity android:name=".search.SearchActivity"></activity>
+        <activity android:name=".itemlist.ItemListActivity" />
+        <activity android:name=".search.SearchActivity" />
+        <activity android:name=".itemlist.TabbedItemListActivityBackup" />
     </application>
 
 </manifest>

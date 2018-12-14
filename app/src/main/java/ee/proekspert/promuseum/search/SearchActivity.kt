@@ -29,11 +29,11 @@ import ee.proekspert.promuseum.barcode.BarcodeTracker
 import ee.proekspert.promuseum.barcode.BarcodeTrackerFactory
 import ee.proekspert.promuseum.camera.CameraSource
 import ee.proekspert.promuseum.camera.CameraSourcePreview
-import ee.proekspert.promuseum.itemlist.ItemListActivity
+import ee.proekspert.promuseum.itemlist.TabbedItemListActivityBackup
 import java.io.IOException
 
 
-class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTrackerCallback{
+class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTrackerCallback {
 
     private val TAG = "Barcode-reader"
 
@@ -78,13 +78,11 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
     }
 
     private fun codeLookup(barcode: String) {
-        if (barcode.startsWith("02")){
+        if (barcode.startsWith("02")) {
             goToItem(barcode)
-        }
-        else if (barcode.startsWith("01")){
+        } else if (barcode.startsWith("01")) {
             goToLocation(barcode)
-        }
-        else {
+        } else {
             notFound()
         }
     }
@@ -101,8 +99,8 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
     }
 
     private fun goToLocation(text: String) {
-        val intent = Intent(applicationContext, ItemListActivity::class.java)
-        ItemListActivity.location_code = text
+        val intent = Intent(applicationContext, TabbedItemListActivityBackup::class.java)
+//        ItemListActivity.location_code = text
         startActivity(intent)
     }
 
@@ -288,7 +286,7 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
     }
 
     override fun onDetectedQrCode(barcode: Barcode?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        /* TODO("not implemented") To change body of created functions use File | Settings | File Templates. */
     }
 
 }
