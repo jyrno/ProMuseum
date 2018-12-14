@@ -35,6 +35,8 @@ import java.io.IOException
 
 class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTrackerCallback {
 
+    private var items = hashSetOf("0100000001", "0201198362", "0202444499", "0201699391", "0201472125")
+
     private val TAG = "Barcode-reader"
 
     // Intent request code to handle updating play services if needed.
@@ -64,7 +66,7 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
 
         mPreview = findViewById<View>(R.id.preview) as CameraSourcePreview
 
-        val autoFocus = false
+        val autoFocus = true
         val useFlash = false
 
         // Check for the camera permission before accessing the camera.  If the
@@ -88,6 +90,8 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
     }
 
     private fun codeLookup(barcode: String) {
+        if (!items.contains(barcode)) notFound()
+
         if (barcode.startsWith("02")) {
             goToItem(barcode)
         } else if (barcode.startsWith("01")) {
@@ -296,7 +300,9 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
     }
 
     override fun onDetectedQrCode(barcode: Barcode?) {
-        /* TODO("not implemented") To change body of created functions use File | Settings | File Templates. */
+        if (barcode != null) {
+            codeLookup(barcode.displayValue)
+        }
     }
 
 }

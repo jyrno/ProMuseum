@@ -16,7 +16,7 @@
     <string name="change">Muuda</string>
 
     <!-- Main page -->
-    <string name="main_item">Connect to reader</string>
+    <string name="main_item">Ühenda koodilugeja</string>
     <string name="main_item_list">Asukoha vaade</string>
 
     <!-- Item -->
@@ -28,12 +28,12 @@
     <string name="item_check">Kontrollitud</string>
 
     <!-- String related to the list view -->
-    <string name="open_item_list">Open Items List</string>
+    <string name="open_item_list">Objektide nimekiri</string>
 
     <!--String related to search -->
-    <string name="search">Otsi</string>
-    <string name="search_by">või otsi museaali koodi abil</string>
-    <string name="code">Museaali kood</string>
+    <string name="search">Skaneeri</string>
+    <string name="search_by">või otsi koodi abil</string>
+    <string name="code">Kood</string>
     <string name="not_found">Ei leidnud</string>
     <string name="scan_code">Skaneeri kood</string>
 </resources>
