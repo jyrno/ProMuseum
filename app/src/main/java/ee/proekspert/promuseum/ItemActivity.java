@@ -22,8 +22,6 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.time.LocalDate;
-import java.util.Date;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -64,7 +62,7 @@ public final class ItemActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.item_condition)).setText(item.getState().toString());
         ((TextView) findViewById(R.id.item_condition_comment)).setText(item.getDamage());
         ((TextView) findViewById(R.id.item_location)).setText(item.getLocation().toString());
-        ((TextView) findViewById(R.id.item_last_checked)).setText(LocalDate.now().minusYears(4).minusMonths(2).toString());
+        ((TextView) findViewById(R.id.item_last_checked)).setText("11.12.2018 11:23:51");
         new DownloadImageTask((ImageView) findViewById(R.id.item_image))
                 .execute("https://www.muis.ee/digitaalhoidla/api/meedia/pisipilt?id=" + item.getImageId());
 
