@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="?android:attr/selectableItemBackground"
     android:orientation="vertical"
-    android:fontFamily="Roboto"
+    android:fontFamily="@font/roboto_medium"
     android:textSize="@dimen/text_medium"
     android:gravity="center_vertical">
 
