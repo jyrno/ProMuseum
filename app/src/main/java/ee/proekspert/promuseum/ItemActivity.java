@@ -57,6 +57,7 @@ public final class ItemActivity extends AppCompatActivity {
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Palo Alto / GARAGE48 Riiul");
 
         TextView code = findViewById(R.id.item_code);
 
