@@ -22,6 +22,8 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.time.LocalDate;
+import java.util.Date;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -31,6 +33,8 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 import ee.proekspert.promuseum.R;
+import ee.proekspert.promuseum.data.Item;
+import ee.proekspert.promuseum.datasource.ItemProvider;
 import ee.proekspert.promuseum.search.SearchActivity;
 
 public final class ItemActivity extends AppCompatActivity {
@@ -50,16 +54,21 @@ public final class ItemActivity extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.item);
         TextView code = findViewById(R.id.item_code);
-        final String museumCode = "TLM 2344 L 23:543";
+
+        Item item = ItemProvider.getItemProvider().findById(item_code);
+
+        final String museumCode = item.getMuseumId();
         code.setText(museumCode);
         //code.setText(code.getText() + "\n" + item_code);
-        ((TextView) findViewById(R.id.item_name)).setText("Lembitu raudrüü");
-        ((TextView) findViewById(R.id.item_condition)).setText("Rahuldav");
-        ((TextView) findViewById(R.id.item_condition_comment)).setText("Veidi mõranenud külgede pealt");
-        ((TextView) findViewById(R.id.item_location)).setText("Kelder / Riiul 28");
-        ((TextView) findViewById(R.id.item_last_checked)).setText("21.12.2018 11:33:52");
+        ((TextView) findViewById(R.id.item_name)).setText(item.getName());
+        ((TextView) findViewById(R.id.item_condition)).setText(item.getState().toString());
+        ((TextView) findViewById(R.id.item_condition_comment)).setText(item.getDamage());
+        ((TextView) findViewById(R.id.item_location)).setText(item.getLocation().toString());
+        ((TextView) findViewById(R.id.item_last_checked)).setText(LocalDate.now().minusYears(4).minusMonths(2).toString());
         new DownloadImageTask((ImageView) findViewById(R.id.item_image))
-                .execute("https://www.muis.ee/digitaalhoidla/api/meedia/pisipilt?id=94a16596-e649-4109-a2ce-7fb10249d210");
+                .execute("https://www.muis.ee/digitaalhoidla/api/meedia/pisipilt?id=" + item.getImageId());
+
+        //https://www.muis.ee/digitaalhoidla/api/meedia/pisipilt?id=3ccfa93f-322d-4fc6-b40b-22cc6d9a490f
 
         findViewById(R.id.item_button).setOnClickListener(new View.OnClickListener() {
             @Override

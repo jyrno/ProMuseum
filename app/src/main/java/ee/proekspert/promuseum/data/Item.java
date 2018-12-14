@@ -4,6 +4,7 @@ public class Item {
 
     private final String id;
     private final String museumId;
+    private String imageId;
     private String name;
     private String description;
     private String damage;
@@ -11,9 +12,10 @@ public class Item {
     private ItemState state;
     private ItemLocation location;
 
-    public Item(String id, String museumId, String name, String description, String damage, ItemStatus status, ItemState state, ItemLocation location) {
+    public Item(String id, String museumId, String imageId, String name, String description, String damage, ItemStatus status, ItemState state, ItemLocation location) {
         this.id = id;
         this.museumId = museumId;
+        this.imageId = imageId;
         this.name = name;
         this.description = description;
         this.damage = damage;
@@ -24,6 +26,10 @@ public class Item {
 
     public String getMuseumId() {
         return museumId;
+    }
+
+    public String getImageId() {
+        return imageId;
     }
 
     public enum ItemStatus {
