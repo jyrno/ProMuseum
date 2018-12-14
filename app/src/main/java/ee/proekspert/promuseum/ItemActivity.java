@@ -1,5 +1,6 @@
 package ee.proekspert.promuseum;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -7,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +31,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 import ee.proekspert.promuseum.R;
+import ee.proekspert.promuseum.search.SearchActivity;
 
 public final class ItemActivity extends AppCompatActivity {
 
@@ -55,6 +59,14 @@ public final class ItemActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.item_last_checked)).setText("21.12.2018 11:33:52");
         new DownloadImageTask((ImageView) findViewById(R.id.item_image))
                 .execute("https://www.muis.ee/digitaalhoidla/api/meedia/pisipilt?id=94a16596-e649-4109-a2ce-7fb10249d210");
+
+        findViewById(R.id.item_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
