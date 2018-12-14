@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -51,6 +54,10 @@ public final class ItemActivity extends AppCompatActivity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.item);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         TextView code = findViewById(R.id.item_code);
 
         Item item = ItemProvider.getItemProvider().findById(item_code);
@@ -72,10 +79,36 @@ public final class ItemActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
-                intent.putExtra("LAST_CHECKED_ITEM", museumCode);
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                startActivityAfterCleanup(SearchActivity.class);
+                return true;
+            case R.id.action_scan:
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return (super.onOptionsItemSelected(menuItem));
+    }
+
+    private void startActivityAfterCleanup(Class<?> cls) {
+        Intent intent = new Intent(getApplicationContext(), cls);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
