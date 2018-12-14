@@ -77,6 +77,16 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
         }
     }
 
+    override fun onPostResume() {
+        super.onPostResume()
+        var museumCode = intent.getStringExtra("LAST_CHECKED_ITEM")
+
+        if (museumCode != null) {
+            var toast = Toast.makeText(applicationContext, museumCode + " checked", Toast.LENGTH_LONG)
+            toast.show()
+        }
+    }
+
     private fun codeLookup(barcode: String) {
         if (barcode.startsWith("02")) {
             goToItem(barcode)

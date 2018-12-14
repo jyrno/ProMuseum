@@ -50,7 +50,8 @@ public final class ItemActivity extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.item);
         TextView code = findViewById(R.id.item_code);
-        code.setText("TLM 2344 L 23:543");
+        final String museumCode = "TLM 2344 L 23:543";
+        code.setText(museumCode);
         //code.setText(code.getText() + "\n" + item_code);
         ((TextView) findViewById(R.id.item_name)).setText("Lembitu raudrüü");
         ((TextView) findViewById(R.id.item_condition)).setText("Rahuldav");
@@ -64,6 +65,7 @@ public final class ItemActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                intent.putExtra("LAST_CHECKED_ITEM", museumCode);
                 startActivity(intent);
             }
         });
