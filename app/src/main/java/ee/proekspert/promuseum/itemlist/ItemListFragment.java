@@ -24,7 +24,7 @@ public abstract class ItemListFragment extends Fragment {
     private List<Item> filteredByStatus = new ArrayList<>();
 
     public ItemListFragment() {
-        List<Item> allItemsInLocation = ItemProvider.getItemProvider().findAllItemsInLocation(new Item.ItemLocation("KUMU / Main Storage"));
+        List<Item> allItemsInLocation = ItemProvider.getItemProvider().findAllItemsInLocation(new Item.ItemLocation("Palo Alto / GARAGE48 Riiul"));
 
         for (Item item : allItemsInLocation) {
             if (itemShouldBeShown(item)) {
