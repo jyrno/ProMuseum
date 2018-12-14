@@ -85,7 +85,7 @@ class SearchActivity : AppCompatActivity(), BarcodeTracker.BarcodeGraphicTracker
         var museumCode = intent.getStringExtra("LAST_CHECKED_ITEM")
 
         if (museumCode != null) {
-            var toast = Toast.makeText(applicationContext, museumCode + " checked", Toast.LENGTH_LONG)
+            var toast = Toast.makeText(applicationContext, museumCode + " kontrollitud", Toast.LENGTH_LONG)
             toast.show()
         }
     }
