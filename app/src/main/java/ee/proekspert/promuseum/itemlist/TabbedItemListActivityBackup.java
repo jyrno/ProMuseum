@@ -27,6 +27,8 @@ public class TabbedItemListActivityBackup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabbed_item_list);
 
+        ((AppCompatActivity)this).getSupportActionBar().setTitle("Palo Alto / GARAGE48 Riiul");
+
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
