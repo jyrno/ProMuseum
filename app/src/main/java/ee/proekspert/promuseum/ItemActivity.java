@@ -50,12 +50,12 @@ public final class ItemActivity extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.item);
         TextView code = findViewById(R.id.item_code);
-        code.setText("lkasj dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka dlka jdlask " + i);
-        code.setText(code.getText() + "\n" + item_code);
-        ((TextView) findViewById(R.id.item_name)).setText("Üks huvitav asi");
-        ((TextView) findViewById(R.id.item_condition)).setText("Väga korralik");
-        ((TextView) findViewById(R.id.item_condition_comment)).setText("Või siis päris ikka pole.");
-        ((TextView) findViewById(R.id.item_location)).setText("Huvitav asukoht");
+        code.setText("TLM 2344 L 23:543");
+        //code.setText(code.getText() + "\n" + item_code);
+        ((TextView) findViewById(R.id.item_name)).setText("Lembitu raudrüü");
+        ((TextView) findViewById(R.id.item_condition)).setText("Rahuldav");
+        ((TextView) findViewById(R.id.item_condition_comment)).setText("Veidi mõranenud külgede pealt");
+        ((TextView) findViewById(R.id.item_location)).setText("Kelder / Riiul 28");
         ((TextView) findViewById(R.id.item_last_checked)).setText("21.12.2018 11:33:52");
         new DownloadImageTask((ImageView) findViewById(R.id.item_image))
                 .execute("https://www.muis.ee/digitaalhoidla/api/meedia/pisipilt?id=94a16596-e649-4109-a2ce-7fb10249d210");
