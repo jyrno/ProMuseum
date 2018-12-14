@@ -80,7 +80,7 @@ public abstract class ItemListFragment extends Fragment {
 
         @Override
         String getFragmentTitle() {
-            return "CHECKED";
+            return "KONTROLLITUD";
         }
     }
 
@@ -92,7 +92,7 @@ public abstract class ItemListFragment extends Fragment {
 
         @Override
         String getFragmentTitle() {
-            return "UNCHECKED";
+            return "KONTROLLIMATA";
         }
     }
 
@@ -104,7 +104,7 @@ public abstract class ItemListFragment extends Fragment {
 
         @Override
         String getFragmentTitle() {
-            return "LOST";
+            return "KADUNUD";
         }
     }
 

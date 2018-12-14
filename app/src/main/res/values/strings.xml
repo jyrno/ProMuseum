@@ -1,16 +1,18 @@
 <resources>
-    <string name="app_name">ProMuseum</string>
+    <string name="app_name">ProMuuseum</string>
 
     <!-- Strings related to MainActivity-->
-    <string name="scan_barcode_button">Scan barcode</string>
-    <string name="no_barcode_captured">No barcode captured</string>
-    <string name="barcode_error_format">"Error reading barcode: %1$s"</string>
+    <string name="scan_barcode_button">Alusta</string>
+    <string name="no_barcode_captured">Koodi ei leitud</string>
+    <string name="barcode_error_format">Viga koodi lugemisel: %1$s"</string>
 
     <!-- Strings related to barcode scanner -->
+    <string name="connecting_reader">Ühendan lugejaga</string>
+    <string name="reader_connected">Koodilugeja on ühendatud</string>
     <string name="ok">OK</string>
-    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
-    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
-    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="permission_camera_rationale">Kaamera kasutamiseks on vaja anda luba</string>
+    <string name="no_camera_permission">Rakendus ei tööta ilma kaamera kasutamise loata. Rakendus suletakse.</string>
+    <string name="low_storage_error">Näotuvastuse sõltuvusi ei saa alla laadida, kuna telefonis on liiga vähe ruumi</string>
 
     <!-- General -->
     <string name="change">Muuda</string>
@@ -29,11 +31,15 @@
 
     <!-- String related to the list view -->
     <string name="open_item_list">Objektide nimekiri</string>
+    <string name="unchecked_title">Kontrollimata</string>
+    <string name="checked_title">Kontrollitud</string>
+    <string name="lost_title">Kadunud</string>
 
     <!--String related to search -->
-    <string name="search">Skaneeri</string>
-    <string name="search_by">või otsi koodi abil</string>
-    <string name="code">Kood</string>
+    <string name="search">Otsi</string>
+    <string name="search_title">Otsing</string>
+    <string name="search_by">Otsi koodi abil</string>
+    <string name="code">sisesta kood</string>
     <string name="not_found">Ei leidnud</string>
     <string name="scan_code">Skaneeri kood</string>
 </resources>
