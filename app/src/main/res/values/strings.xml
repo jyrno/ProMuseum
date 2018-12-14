@@ -21,6 +21,10 @@
 
     <!-- Item -->
     <string name="item_code_title">Kood</string>
+    <string name="item_name_title">Nimetus</string>
+    <string name="item_location_title">Asukoht</string>
+    <string name="item_condition_title">Seisund</string>
+    <string name="item_last_checked_title">Viimati kontrollitud</string>
     <string name="item_check">Kontrollitud</string>
 
     <!-- String related to the list view -->
