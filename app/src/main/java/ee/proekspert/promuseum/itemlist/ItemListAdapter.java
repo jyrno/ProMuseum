@@ -3,7 +3,9 @@ package ee.proekspert.promuseum.itemlist;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -22,10 +24,12 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListIt
         // each data item is just a string in this case
         public TextView mMuseumId;
         public TextView mName;
+        public CheckBox mChecked;
         public ListItemHolder(LinearLayout linearLayout) {
             super(linearLayout);
             mMuseumId = linearLayout.findViewById(R.id.list_item_museum_id);
             mName = linearLayout.findViewById(R.id.list_item_name);
+            mChecked = linearLayout.findViewById(R.id.list_item_checked);
         }
     }
 
@@ -54,6 +58,10 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ListIt
         Item selectedItem = mDataset.get(position);
         holder.mMuseumId.setText(selectedItem.getMuseumId());
         holder.mName.setText(selectedItem.getName());
+        holder.mChecked.setChecked(selectedItem.getStatus().isChecked());
+        if (selectedItem.getStatus().isLost()) {
+            holder.mChecked.setVisibility(View.INVISIBLE);
+        }
 
     }
 
